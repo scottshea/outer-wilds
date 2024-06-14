@@ -1,0 +1,11 @@
+{
+  "root": "libs/ticket-booking/important-feature-0",
+  "sourceRoot": "libs/ticket-booking/important-feature-0/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {},
+    "test": {}
+  },
+  "name": "ticket-booking-important-feature-0"
+}
