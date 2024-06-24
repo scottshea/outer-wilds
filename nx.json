@@ -12,7 +12,10 @@
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/jest.config.[jt]s",
-      "!{projectRoot}/src/test-setup.[jt]s"
+      "!{projectRoot}/src/test-setup.[jt]s",
+      "!{projectRoot}/cypress/**/*",
+      "!{projectRoot}/**/*.cy.[jt]s?(x)",
+      "!{projectRoot}/cypress.config.[jt]s"
     ]
   },
   "targetDefaults": {
@@ -80,5 +83,33 @@
       }
     }
   },
-  "plugins": ["@nx/cypress/plugin"]
+  "plugins": [
+    "@nx/cypress/plugin",
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "eslint:lint"
+      }
+    },
+    {
+      "plugin": "@nx/webpack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview"
+      }
+    },
+    {
+      "plugin": "@nx/next/plugin",
+      "options": {
+        "startTargetName": "start",
+        "buildTargetName": "next:build",
+        "devTargetName": "dev",
+        "serveStaticTargetName": "next:serve-static"
+      }
+    }
+  ],
+  "nxCloudAccessToken": "ZjU3ZmYwNTAtODk0Zi00ZmQ5LTg5ZWMtOGE3NzczYjFiZDU2fHJlYWQtd3JpdGU=",
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "defaultBase": "main"
 }
