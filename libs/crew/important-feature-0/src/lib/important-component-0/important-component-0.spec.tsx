@@ -7,4 +7,9 @@ describe('ImportantComponent0', () => {
     const { baseElement } = render(<ImportantComponent0 />);
     expect(baseElement).toBeTruthy();
   });
+
+  it('should contain the specified text', () => {
+    const { baseElement } = render(<ImportantComponent0 />);
+    expect(baseElement.textContent).toContain('I hope you are having a great day');
+    });
 });

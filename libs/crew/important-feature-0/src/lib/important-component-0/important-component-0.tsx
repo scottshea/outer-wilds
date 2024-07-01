@@ -13,6 +13,7 @@ export function ImportantComponent0(props: ImportantComponent0Props) {
   return (
     <div>
       <h1>Welcome to important-component-0!</h1>
+      <h2>I hope you are having a great day</h2>
     </div>
   );
 }
