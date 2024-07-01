@@ -1,7 +1,5 @@
 {
-  "affected": {
-    "defaultBase": "origin/main"
-  },
+  "affected": { "defaultBase": "origin/main" },
   "stuff": [],
   "namedInputs": {
     "default": ["sharedGlobals", "{projectRoot}/**/*"],
@@ -27,16 +25,11 @@
         "outputPath": "dist/apps/{projectName}",
         "buildLibsFromSource": false
       },
-      "configurations": {
-        "production": {}
-      }
+      "configurations": { "production": {} }
     },
     "serve": {
       "executor": "@nx/next:server",
-      "options": {
-        "buildTarget": "{projectName}:build",
-        "dev": true
-      },
+      "options": { "buildTarget": "{projectName}:build", "dev": true },
       "configurations": {
         "production": {
           "buildTarget": "{projectName}:build:production",
@@ -49,9 +42,7 @@
       "cache": true,
       "inputs": ["production", "^production"],
       "outputs": ["{workspaceRoot}/dist/{projectRoot}/exported"],
-      "options": {
-        "buildTarget": "{projectName}:build:production"
-      }
+      "options": { "buildTarget": "{projectName}:build:production" }
     },
     "serve-static": {
       "dependsOn": ["export"],
@@ -69,9 +60,7 @@
       "cache": true,
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
       "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": ["{projectRoot}/**/*.{ts,tsx,js,jsx}"]
-      }
+      "options": { "lintFilePatterns": ["{projectRoot}/**/*.{ts,tsx,js,jsx}"] }
     },
     "test": {
       "cache": true,
@@ -83,33 +72,7 @@
       }
     }
   },
-  "plugins": [
-    "@nx/cypress/plugin",
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "eslint:lint"
-      }
-    },
-    {
-      "plugin": "@nx/webpack/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "serveTargetName": "serve",
-        "previewTargetName": "preview"
-      }
-    },
-    {
-      "plugin": "@nx/next/plugin",
-      "options": {
-        "startTargetName": "start",
-        "buildTargetName": "next:build",
-        "devTargetName": "dev",
-        "serveStaticTargetName": "next:serve-static"
-      }
-    }
-  ],
-  "nxCloudAccessToken": "ZjU3ZmYwNTAtODk0Zi00ZmQ5LTg5ZWMtOGE3NzczYjFiZDU2fHJlYWQtd3JpdGU=",
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "defaultBase": "main"
+  "plugins": ["@nx/cypress/plugin"],
+  "nxCloudAccessToken": "OTdjZWRiNzctN2E1ZS00M2NkLThiMmYtY2IzMWFhZmIxNTBhfHJlYWQtd3JpdGU=",
+  "nxCloudUrl": "https://staging.nx.app"
 }
