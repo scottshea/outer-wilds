@@ -73,6 +73,6 @@
     }
   },
   "plugins": ["@nx/cypress/plugin"],
-  "nxCloudAccessToken": "OTdjZWRiNzctN2E1ZS00M2NkLThiMmYtY2IzMWFhZmIxNTBhfHJlYWQtd3JpdGU=",
+  "nxCloudAccessToken": "MDljMWZlMTEtNDUwYS00ZGU1LTljNDctYWUxYTdlYjFiYjFhfHJlYWQ=",
   "nxCloudUrl": "https://staging.nx.app"
 }
